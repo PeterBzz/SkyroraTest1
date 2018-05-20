@@ -1,0 +1,25 @@
+
+{
+    "version": "2.0.0",
+    "tasks":
+    [
+        {
+            "label": "build cpp",
+            "type": "shell",
+            "command": "g++",
+            "args":
+            [
+                "-std=c++11",
+                "-o", "build/app.out",
+                "-g", "src/main.cpp",
+                "src/DataSource/*.cpp", "src/QueueClient/*.cpp", "src/QueueServer/*.cpp", "src/FileWriter/*.cpp",
+                "-lpthread", "-lrt"
+            ],
+            "group":
+            {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
